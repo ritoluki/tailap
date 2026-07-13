@@ -94,6 +94,7 @@ Mở `http://localhost:3000`. First slice chỉ gồm:
 
 ```bash
 npm run lint
+npm test
 npm run typecheck
 npm run build
 ```
@@ -104,12 +105,13 @@ build.
 
 ## 9. Ranh giới scaffold
 
-Scaffold hiện tại chỉ có layout, navigation, shared components, static route
-shell và placeholder Markdown trong `content/pages/`.
+First slice hiện có layout, navigation, shared components, static routes và
+health check deterministic tại `/bat-dau`. Health check chỉ dùng state trong
+memory; câu trả lời bị xóa khi tải lại trang hoặc đóng tab.
 
-Chưa có health-check logic, decision table implementation, dynamic action-plan
-mapping, localStorage, IndexedDB, API, Server Action, database, authentication,
-analytics, form, email public, MDX, external font hoặc service worker.
+Chưa có localStorage, IndexedDB, calculator, debt inventory, API, Server Action,
+database, authentication, analytics, form, email public, MDX, external font
+hoặc service worker.
 
 Security headers như CSP và HSTS phải được cấu hình tại hosting layer sau khi
 provider được chọn; chúng không được mô phỏng bằng Next.js runtime trong static

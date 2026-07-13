@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { ContentContainer } from "@/components/content-container";
 import { SensitiveDataWarning } from "@/components/sensitive-data-warning";
 import { UrgentHelpLink } from "@/components/urgent-help-link";
+import { HealthCheckForm } from "@/features/health-check/health-check-form";
 
 export const metadata: Metadata = {
   title: "Bắt đầu",
@@ -19,21 +21,23 @@ export default function StartPage() {
           Bắt đầu khi bạn lo mình sắp không đủ khả năng thanh toán
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
-          Trang này mới là khung nội dung. Health check và decision table chưa
-          được triển khai trong lần scaffold này.
+          Bốn câu hỏi dưới đây giúp bạn nhận diện một số tín hiệu chung và chọn
+          bước tiếp theo an toàn hơn. Công cụ không xác định nhóm nợ CIC, không
+          chẩn đoán và không dự đoán hành động của tổ chức tín dụng.
         </p>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[2fr_1fr]">
-          <section className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6">
+          <section className="rounded-2xl border border-slate-300 bg-slate-50 p-6">
             <h2 className="text-xl font-semibold text-slate-950">
-              Khu vực health check
+              Trước khi bắt đầu
             </h2>
             <p className="mt-3 leading-7 text-slate-700">
-              Khi được triển khai ở slice tiếp theo, câu trả lời chỉ tồn tại
-              trong bộ nhớ của trang và bị xóa khi tải lại hoặc đóng tab.
+              Chỉ chọn đáp án phù hợp nhất với tình trạng hiện tại. Bạn không
+              cần nhập tên, số tiền, tổ chức tín dụng, số hợp đồng hoặc gửi giấy
+              tờ.
             </p>
             <p className="mt-3 text-sm font-medium text-slate-600">
-              Hiện chưa có câu hỏi, lưu trữ, phân loại hoặc kết quả động.
+              Bạn có thể chọn “Tôi không muốn trả lời” và vẫn tiếp tục.
             </p>
           </section>
           <div>
@@ -48,6 +52,34 @@ export default function StartPage() {
         <div className="mt-8">
           <SensitiveDataWarning />
         </div>
+
+        <HealthCheckForm />
+
+        <noscript>
+          <section className="mt-8 rounded-2xl border border-slate-300 bg-slate-50 p-6">
+            <h2 className="text-xl font-semibold text-slate-950">
+              Health check cần JavaScript để xử lý câu trả lời trong trình duyệt
+            </h2>
+            <p className="mt-3 leading-7 text-slate-700">
+              Bạn vẫn có thể đọc kế hoạch hành động chung hoặc mở trang hỗ trợ
+              khẩn cấp mà không cần hoàn thành health check.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4">
+              <Link
+                className="font-semibold text-teal-800 underline"
+                href="/ke-hoach-hanh-dong"
+              >
+                Xem kế hoạch hành động chung
+              </Link>
+              <Link
+                className="font-semibold text-red-800 underline"
+                href="/ho-tro-khan-cap"
+              >
+                Mở trang hỗ trợ khẩn cấp
+              </Link>
+            </div>
+          </section>
+        </noscript>
       </article>
     </ContentContainer>
   );
