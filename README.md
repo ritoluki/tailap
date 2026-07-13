@@ -64,3 +64,53 @@ Dự án giai đoạn đầu:
 - **Chuyển tuyến:** hướng người dùng đến cơ quan, tổ chức tín dụng, luật sư, cơ sở y tế hoặc chuyên gia phù hợp.
 - **Dữ liệu nhạy cảm của dự án:** thông tin tài chính, tín dụng, sức khỏe, hành vi cờ bạc, danh tính, hợp đồng, ghi âm và thông tin người thân.
 - **Red feature:** tính năng không được xây trong V1.
+
+## 6. Yêu cầu phát triển
+
+- Node.js `>=20.9.0` — môi trường scaffold: `22.13.0`.
+- npm — môi trường scaffold: `10.9.2`.
+- Browser baseline của Tailwind CSS v4: Chrome 111+, Safari 16.4+ và Firefox 128+.
+
+First slice dùng Next.js App Router, TypeScript strict, Tailwind CSS và static
+export. Font hiển thị là system font; không tải font hoặc script từ bên thứ ba.
+
+## 7. Cài đặt và chạy local
+
+```bash
+npm install
+npm run dev
+```
+
+Mở `http://localhost:3000`. First slice chỉ gồm:
+
+- `/`
+- `/bat-dau`
+- `/ke-hoach-hanh-dong`
+- `/ho-tro-khan-cap`
+- `/quyen-rieng-tu`
+- `/ve-du-an`
+
+## 8. Kiểm tra chất lượng
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+`npm run build` tạo static export trong thư mục `out/`. Không dùng `next start`
+cho output này; hãy phục vụ `out/` bằng static web server khi cần kiểm tra bản
+build.
+
+## 9. Ranh giới scaffold
+
+Scaffold hiện tại chỉ có layout, navigation, shared components, static route
+shell và placeholder Markdown trong `content/pages/`.
+
+Chưa có health-check logic, decision table implementation, dynamic action-plan
+mapping, localStorage, IndexedDB, API, Server Action, database, authentication,
+analytics, form, email public, MDX, external font hoặc service worker.
+
+Security headers như CSP và HSTS phải được cấu hình tại hosting layer sau khi
+provider được chọn; chúng không được mô phỏng bằng Next.js runtime trong static
+export.
