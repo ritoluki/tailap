@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-07-13",
+  "language": "vi",
+  "status": "approved_for_first_slice_scaffold",
+  "files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/plan/00-product-charter.md",
+    "docs/plan/01-legal-safety-boundaries.md",
+    "docs/plan/02-personas-and-journeys.md",
+    "docs/plan/03-mvp-requirements.md",
+    "docs/plan/04-content-editorial-policy.md",
+    "docs/plan/05-privacy-security.md",
+    "docs/plan/06-crisis-safety.md",
+    "docs/plan/07-user-research-protocol.md",
+    "docs/plan/08-roadmap-180-days.md",
+    "docs/plan/09-risk-register.md",
+    "docs/plan/10-source-register.md",
+    "docs/plan/11-launch-checklist.md",
+    "docs/plan/12-copy-library.md",
+    "docs/plan/13-health-check-decision-table.md",
+    "docs/plan/content-article-template.md",
+    "docs/plan/decision-log.md",
+    "docs/architecture/ADR-001-mvp-architecture.md"
+  ]
+}
